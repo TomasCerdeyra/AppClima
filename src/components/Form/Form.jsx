@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const Form = () => {
+const Form = ({ NuevaCity }) => {
     const [city, setCity] = useState('');
 
     const onSubmit = (e) => {
@@ -8,6 +8,8 @@ const Form = () => {
 
         if(city === "" || !city) return;
         console.log(city);
+
+        NuevaCity(city);
     }
 
     return (    

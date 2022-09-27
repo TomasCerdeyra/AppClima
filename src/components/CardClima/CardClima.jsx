@@ -1,26 +1,28 @@
 import React, { useState } from 'react'
+import Form from '../Form/Form'
+import CardDetail from '../card/CardDetail'
 
 const CardClima = () => {
 
-    let urdClima = "https://api.openweathermap.org/data/2.5/weather?appid=842d6ee904874488a6a8f4adb8664f79&lang=es"
-    let cityUrl = "&Q="
+    let urlClima = "https://api.openweathermap.org/data/2.5/weather?appid=842d6ee904874488a6a8f4adb8664f79&lang=es"
+    let cityUrl = "&q="
 
     let urlClimaPrediccion = "https://api.openweathermap.org/data/2.5/forecast?appid=842d6ee904874488a6a8f4adb8664f79&lang=es"
     
     const [climaActual, setClimaActual] = useState([]);
     const [climaPredict, setClimaPredict] = useState([]);
-    const [loading, setLoading] = useState(fase);
+    const [loading, setLoading] = useState(false);
     const [card, setCard] = useState(false);
-    const [cityForm, setCityForm] = ('');
+    const [cityForm, setCityForm] = ("");
 
     const getApi = async(city)=>{
         setLoading(true);
-        setCityForm(city);
+        /* setCityForm(city); */
 
         //api clima timepo real
-        urdClima =urdClima + cityUrl + city;
+        urlClima =urlClima + cityUrl + city;
 
-        await fetch(urdClima).then((res)=>{
+        await fetch(urlClima).then((res)=>{
             return res.json();
         }).then((data)=>{
             setClimaActual(data)
@@ -31,7 +33,7 @@ const CardClima = () => {
         }));
 
         //Api clima prediccion a futuro
-        urlClimaPrediccion = urlClimaPrediccion + cityUrl + city
+        urlClimaPrediccion = urlClimaPrediccion + cityUrl + city;
 
         await fetch(urlClimaPrediccion).then((res)=>{
             return res.json();
@@ -49,7 +51,18 @@ const CardClima = () => {
     }
 
     return (
-        <div>CardClima</div>
+        <>
+            <Form NuevaCity = {getApi}/>
+
+            <CardDetail 
+            card={card}
+            loading={loading}
+            climaActual={climaActual}
+            climaPredict={climaPredict}
+            
+
+            />
+        </>
     )
 }
 

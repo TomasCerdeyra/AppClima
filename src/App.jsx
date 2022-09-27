@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import './Styles/App.css'
 import NavBar from './components/NavBar/NavBar'
-import Form from './components/Form/Form'
+import CardClima from './components/CardClima/CardClima'
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -9,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      <Form />
+      <CardClima />
     </div>
   )
 }
