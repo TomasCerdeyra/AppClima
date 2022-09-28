@@ -6,7 +6,7 @@ const Form = ({ NuevaCity }) => {
     const onSubmit = (e) => {
         e.preventDefault();
 
-        if(city === "" || !city) return;
+        /* if(city === "" || !city) return; */
         console.log(city);
 
         NuevaCity(city);

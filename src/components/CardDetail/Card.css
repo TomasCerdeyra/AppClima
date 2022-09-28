@@ -1,0 +1,22 @@
+.contAmbienteActual{
+    background-image: url("https://images.pexels.com/photos/3109671/pexels-photo-3109671.jpeg?cs=srgb&dl=pexels-furknsaglam-3109671.jpg&fm=jpg");
+    background-size: cover;
+    height: 22rem;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+.tiltle{
+}
+
+.date{
+    margin-top: 50px;
+}
+
+.clim{
+    margin-top: 220px;
+}
+
+.desc{
+    margin-top: 280px;
+}

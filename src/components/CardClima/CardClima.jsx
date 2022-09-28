@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Form from '../Form/Form'
-import CardDetail from '../card/CardDetail'
+import Card from '../CardDetail/Card'
 
 const CardClima = () => {
 
@@ -25,8 +25,8 @@ const CardClima = () => {
         await fetch(urlClima).then((res)=>{
             return res.json();
         }).then((data)=>{
-            setClimaActual(data)
             console.log(data);
+            setClimaActual(data)
         }).catch((error =>{
             console.log(error);
             setLoading(false);
@@ -39,8 +39,6 @@ const CardClima = () => {
             return res.json();
         }).then((data)=>{
             setClimaPredict(data)
-            console.log(data);
-
             setLoading(false);
             setCard(true);
         }).catch((error =>{
@@ -54,14 +52,7 @@ const CardClima = () => {
         <>
             <Form NuevaCity = {getApi}/>
 
-            <CardDetail 
-            card={card}
-            loading={loading}
-            climaActual={climaActual}
-            climaPredict={climaPredict}
-            
-
-            />
+            <Card hayCard={card} climaActual={climaActual} climaPredict={climaPredict} haySpinner={loading}/>
         </>
     )
 }
