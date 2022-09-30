@@ -38,7 +38,8 @@ const CardClima = () => {
         await fetch(urlClimaPrediccion).then((res)=>{
             return res.json();
         }).then((data)=>{
-            setClimaPredict(data)
+            setClimaPredict(data);
+            console.log(data);
             setLoading(false);
             setCard(true);
         }).catch((error =>{

@@ -1,22 +1,53 @@
+
+
+@media(min-width: 768px) {
+    .contGeneral{
+        display: flex;
+        justify-content: center;
+    }
+    .contCard{
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        width: 65rem;
+        max-width: 80rem;
+    }
+}
+
 .contAmbienteActual{
     background-image: url("https://images.pexels.com/photos/3109671/pexels-photo-3109671.jpeg?cs=srgb&dl=pexels-furknsaglam-3109671.jpg&fm=jpg");
     background-size: cover;
-    height: 22rem;
-    padding-left: 20px;
-    padding-top: 20px;
+}
+
+@media(min-width: 768px) {
+    .contAmbienteActual{
+        max-width: 20rem;
+        width: 20rem;
+        height: 100% !important;
+    }
 }
 
 .tiltle{
 }
 
 .date{
-    margin-top: 50px;
+    margin-top: 3.15rem;
 }
 
 .clim{
-    margin-top: 220px;
+    margin-top: 13.75rem;
+}
+@media(min-width: 768px) {
+    .clim{
+        margin-top: 16.875rem;
+    }
 }
 
 .desc{
-    margin-top: 280px;
+    margin-top: 17.5rem;
+}
+@media(min-width: 768px) {
+    .desc{
+        margin-top: 20rem;
+    }
 }
